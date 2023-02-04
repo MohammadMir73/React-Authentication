@@ -1,13 +1,11 @@
 import axios from "axios";
-
-const config = {
-    // headers: {
-    //   "Access-Control-Allow-Credentials": true,
-    //   "Access-Control-Allow-Origin": "*",
-    //   "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-    // }
-  };
+const BASE_URL = 'http://localhost:3500'
 
 export default axios.create({
-    baseURL:'http://localhost:3500'
+    baseURL: BASE_URL
+});
+export const axiosPrivate = axios.create({
+    baseURL: BASE_URL,
+    headers: { 'Content-Type': 'application/json'},
+    withCredentials: true
 });
